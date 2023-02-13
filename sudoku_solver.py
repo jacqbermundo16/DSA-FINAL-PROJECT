@@ -18,19 +18,6 @@
 # 5. Create a code that makes the program repeatable unless the user said stop.
 
 
-board = [
-    [7,8,0,4,0,0,1,2,0],
-    [6,0,0,0,7,5,0,0,9],
-    [0,0,0,6,0,1,0,7,8],
-    [0,0,7,0,4,0,2,6,0],
-    [0,0,1,0,5,0,9,3,0],
-    [9,0,4,0,6,0,0,0,5],
-    [0,7,0,3,0,0,0,1,2],
-    [1,2,0,0,0,7,4,0,0],
-    [0,4,9,2,0,6,0,0,7]
-]
-
-
 def solve(bo):
     find = find_empty(bo)
     if not find:
@@ -105,7 +92,50 @@ def basic_info():
     print("\nTo proceed, please enter the puzzle informations we're asking for. You'll be guided by the instructions provided below. \n")
     print('==================================')
 
+def ask_input():
+
+    _row1 = input("Row 1: ")
+    row1 = _row1.split()
+    row1 = [int(i) for i in row1]
+
+    _row2 = input("Row 2: ")
+    row2 = _row2.split()
+    row2 = [int(i) for i in row2]
+
+    _row3 = input("Row 3: ")
+    row3 = _row3.split()
+    row3 = [int(i) for i in row3]
+
+    _row4 = input("Row 4: ")
+    row4 = _row4.split()
+    row4 = [int(i) for i in row4]
+
+    _row5 = input("Row 5: ")
+    row5 = _row5.split()
+    row5 = [int(i) for i in row5]
+
+    _row6 = input("Row 6: ")
+    row6 = _row6.split()
+    row6 = [int(i) for i in row6]
+
+    _row7 = input("Row 7: ")
+    row7 = _row7.split()
+    row7 = [int(i) for i in row7]
+
+    _row8 = input("Row 8: ")
+    row8 = _row8.split()
+    row8 = [int(i) for i in row8]
+
+    _row9 = input("Row 9: ")
+    row9 = _row9.split()
+    row9 = [int(i) for i in row9]
+
+    print('==================================')
+    return row1, row2, row3, row4, row5, row6, row7, row8, row9
+    
 basic_info()
+r1, r2, r3, r4, r5, r6, r7, r8, r9 = ask_input()
+board = [r1, r2, r3, r4, r5, r6, r7, r8, r9]
 print_board(board)
 solve(board)
 print("___________________")
