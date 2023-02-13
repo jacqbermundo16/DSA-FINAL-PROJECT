@@ -1,3 +1,23 @@
+# MODIFICATIONS (tentative only)
+# (-will attempt to implement all so until then, it's stil modifiable
+#  -the modification/s that worked will be marked)
+
+# 1. Ask users to input their unsolved sudoku puzzle.
+# 2. Add a menu list?
+# 3. Ask users to solve another sudoku puzzle or to exit 
+# 4. Make a more user-friendly interface if possible
+# 5. Try to have a code for another type of sudoku puzzle aside from 9x9
+#     (for example, 4x4 or 16x16?)
+
+
+# STEPS
+# 1. Add info for the user like Program name and instructions
+# 2. Create a function to ask the user for input and save it.
+# 3. Make a menu list? 
+# 4. Create a function for the menu list
+# 5. Create a code that makes the program repeatable unless the user said stop.
+
+
 board = [
     [7,8,0,4,0,0,1,2,0],
     [6,0,0,0,7,5,0,0,9],
@@ -76,6 +96,16 @@ def find_empty(bo):
 
     return None
 
+
+def basic_info():
+    print('==================================')
+    print('         SUDOKU SOLVER')
+    print('==================================')
+    print('\nWelcome to Suduko  Solver, in here, we solve your sudoku puzzles.')
+    print("\nTo proceed, please enter the puzzle informations we're asking for. You'll be guided by the instructions provided below. \n")
+    print('==================================')
+
+basic_info()
 print_board(board)
 solve(board)
 print("___________________")
