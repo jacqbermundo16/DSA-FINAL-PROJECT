@@ -142,9 +142,10 @@ def ask_input():
     return row1, row2, row3, row4, row5, row6, row7, row8, row9
 
 def menu_list():
-    print("==========MENU==========")
-    print('1 -> Check the puzzle arrangement')
-    print('2 -> Show Solution')
+    print('========================')
+    print("          MENU          ")
+    print('1 -> Show the Solution')
+    print('2 -> Solve another puzzle')
     print('3 -> Exit (y/n)')
     print('========================')
     print ()
@@ -164,12 +165,15 @@ def sudoku_solver():
             if num == 1:
                 print('Sudoku Puzzle')
                 print_board(board)
-
-            elif num == 2:
                 solve(board)
                 print("---------------------------")
                 print('Sudoku Puzzle Solution')
                 print_board(board)
+                print('==================================')
+
+
+            elif num == 2:
+                sudoku_solver()
 
             elif num == 3:
                 ask = str(input("Do you want to exit? (y/n):  "))
