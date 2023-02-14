@@ -88,12 +88,19 @@ def basic_info():
     print('==================================')
     print('         SUDOKU SOLVER')
     print('==================================')
-    print('\nWelcome to Suduko  Solver, in here, we solve your sudoku puzzles.')
-    print("\nTo proceed, please enter the puzzle informations we're asking for. You'll be guided by the instructions provided below. \n")
-    print('==================================')
+    print('Welcome to Sudoku  Solver, in here, we solve your sudoku puzzles.')
+    print('To solve your puzzle, we need you to enter the values provided. Follow the steps below carefully to avoid mistakes.')
+    print('\n')
+    print('Guide to properly input your puzzle')
+    print('1. Look at your puzzle and focus on the first row (topmost horintal alignment from left to right, containing 9 boxes).')
+    print('2. Input the data by entering the numbers provides, if the box is empty, write 0.')
+    print('   > Example: 1 0 0 3 2 0 4 5 0')
+    print("   !!NOTE: Please make sure that the position of the numbers  are correct and each input are separated by a single space.")
+    print('3. After inserting the numbers, press ENTER and do the same procedure for the next rows.')
+    print("4. Once you're done, press ENTER to see the solution")
+    print('==================================\n')
 
 def ask_input():
-
     _row1 = input("Row 1: ")
     row1 = _row1.split()
     row1 = [int(i) for i in row1]
@@ -132,11 +139,18 @@ def ask_input():
 
     print('==================================')
     return row1, row2, row3, row4, row5, row6, row7, row8, row9
-    
-basic_info()
-r1, r2, r3, r4, r5, r6, r7, r8, r9 = ask_input()
-board = [r1, r2, r3, r4, r5, r6, r7, r8, r9]
-print_board(board)
-solve(board)
-print("___________________")
-print_board(board)
+
+
+
+def sudoku_solver():
+    basic_info()
+    r1, r2, r3, r4, r5, r6, r7, r8, r9 = ask_input()
+    board = [r1, r2, r3, r4, r5, r6, r7, r8, r9]
+    print('Sudoku Puzzle')
+    print_board(board)
+    solve(board)
+    print("---------------------------")
+    print('Sudoku Puzzle Solution')
+    print_board(board)
+
+sudoku_solver()
