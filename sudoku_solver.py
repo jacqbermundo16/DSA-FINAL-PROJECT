@@ -101,6 +101,7 @@ def basic_info():
     print('==================================\n')
 
 def ask_input():
+    print('Please enter the data for each row.')
     _row1 = input("Row 1: ")
     row1 = _row1.split()
     row1 = [int(i) for i in row1]
@@ -140,17 +141,42 @@ def ask_input():
     print('==================================')
     return row1, row2, row3, row4, row5, row6, row7, row8, row9
 
-
+def menu_list():
+    print("==========MENU==========")
+    print('1 -> Check the puzzle arrangement')
+    print('2 -> Show Solution')
+    print('3 -> Exit (y/n)')
+    print('========================')
+    print ()
 
 def sudoku_solver():
     basic_info()
     r1, r2, r3, r4, r5, r6, r7, r8, r9 = ask_input()
     board = [r1, r2, r3, r4, r5, r6, r7, r8, r9]
-    print('Sudoku Puzzle')
-    print_board(board)
-    solve(board)
-    print("---------------------------")
-    print('Sudoku Puzzle Solution')
-    print_board(board)
+
+    menu_list()
+    def menu():
+        while True:
+            askInput = int(input('What do you want to do? (1-3): '))
+            print()
+            num = askInput
+
+            if num == 1:
+                print('Sudoku Puzzle')
+                print_board(board)
+
+            elif num == 2:
+                solve(board)
+                print("---------------------------")
+                print('Sudoku Puzzle Solution')
+                print_board(board)
+
+            elif num == 3:
+                ask = str(input("Do you want to exit? (y/n):  "))
+                if ask == 'y':
+                    break
+    menu()
+
+        
 
 sudoku_solver()
