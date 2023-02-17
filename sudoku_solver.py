@@ -98,7 +98,7 @@ def basic_info():
     print("   !!NOTE: Please make sure that the position of the numbers  are correct and each input are separated by a single space.")
     print('3. After inserting the numbers, press ENTER and do the same procedure for the next rows.')
     print("4. Once you're done, press ENTER to see the solution")
-    print('==================================\n')
+    print('==================================')
 
 def ask_input():
     print('Please enter the data for each row.')
@@ -143,10 +143,8 @@ def ask_input():
 
 def menu_list():
     print('========================')
-    print("          MENU          ")
-    print('1 -> Show the Solution')
-    print('2 -> Solve another puzzle')
-    print('3 -> Exit (y/n)')
+    print('1-> Solve another puzzle')
+    print('2 -> Exit (y/n)')
     print('========================')
     print ()
 
@@ -155,27 +153,24 @@ def sudoku_solver():
     r1, r2, r3, r4, r5, r6, r7, r8, r9 = ask_input()
     board = [r1, r2, r3, r4, r5, r6, r7, r8, r9]
 
+    print('Sudoku Puzzle')
+    print_board(board)
+    solve(board)
+    print("---------------------------")
+    print('Sudoku Puzzle Solution')
+    print_board(board)
+    print('==================================')
     menu_list()
     def menu():
         while True:
-            askInput = int(input('What do you want to do? (1-3): '))
+            askInput = int(input('What do you want to do? (1-2): '))
             print()
             num = askInput
 
             if num == 1:
-                print('Sudoku Puzzle')
-                print_board(board)
-                solve(board)
-                print("---------------------------")
-                print('Sudoku Puzzle Solution')
-                print_board(board)
-                print('==================================')
-
-
-            elif num == 2:
                 sudoku_solver()
-
-            elif num == 3:
+                
+            elif num == 2:
                 ask = str(input("Do you want to exit? (y/n):  "))
                 if ask == 'y':
                     break
