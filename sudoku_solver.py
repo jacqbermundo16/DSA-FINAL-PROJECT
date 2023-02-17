@@ -99,7 +99,8 @@ def basic_info():
     print('==================================')
 
 def ask_input():
-    print('Please enter the data for each row.')
+    print('Please enter the data for each row. Please make sure to input 9 numbers with spaces in between.')
+
     _row1 = input("Row 1: ")
     row1 = _row1.split()
     row1 = [int(i) for i in row1]
@@ -153,8 +154,31 @@ def sudoku_solver():
 
     print('Sudoku Puzzle')
     print_board(board)
-    solve(board)
     print("---------------------------")
+
+    def check():
+            while True:
+                ask = input('Do you confirm that all values are in their right positions? (y/n)')
+
+                if ask == 'n':
+                    ask_user = int(input('What row do you want to change?(1-9): '))
+                    board.pop(ask_user - 1)
+
+                    _rown = input(f'Row {ask_user}: ')
+                    rown = _rown.split()
+                    rown = [int(i) for i in rown]
+
+                    board.insert(ask_user - 1, rown)
+                    return board
+                    
+                elif ask == 'y':
+                    break
+
+    board = [check()]
+    print('Sudoku Puzzle')
+    print_board(board)
+    print("---------------------------")
+    solve(board)
     print('Sudoku Puzzle Solution')
     print_board(board)
     print('==================================')
