@@ -156,29 +156,27 @@ def sudoku_solver():
     print_board(board)
     print("---------------------------")
 
-    def check():
-            while True:
-                ask = input('Do you confirm that all values are in their right positions? (y/n)')
+    while True: 
+        ask = input('Do you confirm that all values are in their right positions? (y/n): ')
+        if ask == 'n':
+            ask_user = int(input('What row do you want to change?(1-9): '))
+            board.pop(ask_user - 1)
 
-                if ask == 'n':
-                    ask_user = int(input('What row do you want to change?(1-9): '))
-                    board.pop(ask_user - 1)
+            _rown = input(f'Row {ask_user}: ')
+            rown = _rown.split()
+            rown = [int(i) for i in rown]
 
-                    _rown = input(f'Row {ask_user}: ')
-                    rown = _rown.split()
-                    rown = [int(i) for i in rown]
-
-                    board.insert(ask_user - 1, rown)
-                    return board
+            board.insert(ask_user - 1, rown)
+            print("---------------------------")
+            print('Sudoku Puzzle')
+            print_board(board)
+            print("---------------------------")
+         
+        elif ask == 'y':
+            break
                     
-                elif ask == 'y':
-                    break
-
-    board = [check()]
-    print('Sudoku Puzzle')
-    print_board(board)
-    print("---------------------------")
     solve(board)
+    print('==================================')
     print('Sudoku Puzzle Solution')
     print_board(board)
     print('==================================')
@@ -193,9 +191,8 @@ def sudoku_solver():
                 sudoku_solver()
                 
             elif num == 2:
-                ask = str(input("Do you want to exit? (y/n):  "))
-                if ask == 'y':
-                    break
+                print("Thank you for trusting us. We hope that we helped in solving your sudoku puzzle. \n")
+                break
     menu()
 
 sudoku_solver()
