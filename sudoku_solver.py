@@ -1,14 +1,12 @@
-# MODIFICATIONS (tentative only)
-# (-will attempt to implement all so until then, it's stil modifiable
-#  -the modification/s that worked will be marked)
+# https://www.youtube.com/watch?v=eqUwSA0xI-s - Part 1 of the source code
+# https://www.youtube.com/watch?v=lK4N8E6uNr4 - Part 2
+
+# MODIFICATIONS 
 
 # 1. Ask users to input their unsolved sudoku puzzle.
 # 2. Add a menu list?
 # 3. Ask users to solve another sudoku puzzle or to exit 
 # 4. Make a more user-friendly interface if possible
-# 5. Try to have a code for another type of sudoku puzzle aside from 9x9
-#     (for example, 4x4 or 16x16?)
-
 
 # STEPS
 # 1. Add info for the user like Program name and instructions
@@ -161,10 +159,10 @@ def sudoku_solver():
     print_board(board)
     print('==================================')
     menu_list()
+
     def menu():
         while True:
             askInput = int(input('What do you want to do? (1-2): '))
-            print()
             num = askInput
 
             if num == 1:
@@ -175,7 +173,5 @@ def sudoku_solver():
                 if ask == 'y':
                     break
     menu()
-
-        
 
 sudoku_solver()
