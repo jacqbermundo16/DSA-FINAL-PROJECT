@@ -83,9 +83,9 @@ def find_empty(bo):
 
 
 def basic_info():
-    print('==================================')
-    print('         SUDOKU SOLVER')
-    print('==================================')
+    print('===========================================================================================================================')
+    print('                                                     SUDOKU SOLVER')
+    print('===========================================================================================================================')
     print('Welcome to Sudoku  Solver, in here, we solve your sudoku puzzles.')
     print('To solve your puzzle, we need you to enter the values provided. Follow the steps below carefully to avoid mistakes.')
     print('\n')
@@ -96,7 +96,7 @@ def basic_info():
     print("   !!NOTE: Please make sure that the position of the numbers  are correct and each input are separated by a single space.")
     print('3. After inserting the numbers, press ENTER and do the same procedure for the next rows.')
     print("4. Once you're done, press ENTER to see the solution")
-    print('==================================')
+    print('===========================================================================================================================')
 
 def ask_input():
     print('Please enter the data for each row. Please make sure to input 9 numbers with spaces in between.')
@@ -137,14 +137,13 @@ def ask_input():
     row9 = _row9.split()
     row9 = [int(i) for i in row9]
 
-    print('==================================')
+    print('===========================================================================================================================')
+
     return row1, row2, row3, row4, row5, row6, row7, row8, row9
 
 def menu_list():
-    print('========================')
     print('1-> Solve another puzzle')
     print('2 -> Exit (y/n)')
-    print('========================')
     print ()
 
 def sudoku_solver():
@@ -154,7 +153,7 @@ def sudoku_solver():
 
     print('Sudoku Puzzle')
     print_board(board)
-    print("---------------------------")
+    print("-----------------------------------------------------------------------------------")
 
     while True: 
         ask = input('Do you confirm that all values are in their right positions? (y/n): ')
@@ -167,19 +166,19 @@ def sudoku_solver():
             rown = [int(i) for i in rown]
 
             board.insert(ask_user - 1, rown)
-            print("---------------------------")
+            print("---------------------------------------------------------------------------")
             print('Sudoku Puzzle')
             print_board(board)
-            print("---------------------------")
+            print("---------------------------------------------------------------------------")
          
         elif ask == 'y':
             break
                     
     solve(board)
-    print('==================================')
+    print('===========================================================================================================================')
     print('Sudoku Puzzle Solution')
     print_board(board)
-    print('==================================')
+    print('===========================================================================================================================')
     menu_list()
 
     def menu():
@@ -191,7 +190,9 @@ def sudoku_solver():
                 sudoku_solver()
                 
             elif num == 2:
-                print("Thank you for trusting us. We hope that we helped in solving your sudoku puzzle. \n")
+                print('===========================================================================================================================')
+                print("\nThank you for trusting us. We hope that we helped in solving your sudoku puzzle. \n")
+                print('===========================================================================================================================')
                 break
     menu()
 
